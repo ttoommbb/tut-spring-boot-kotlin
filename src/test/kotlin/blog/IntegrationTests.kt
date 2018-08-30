@@ -15,11 +15,19 @@ import org.springframework.test.context.junit.jupiter.SpringExtension
 
 @ExtendWith(SpringExtension::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class IntegrationTests(@Autowired val restTemplate: TestRestTemplate) {
+class IntegrationTests(@Autowired val restTemplate: TestRestTemplate,
+					   @Autowired val prop: AnotherBlogProperties) {
 
 	@BeforeAll
 	fun setup() {
 		println(">> Setup")
+	}
+
+	@Test
+	fun `get property`() {
+
+		println(">> ${prop.banner.title}")
+		println(">> ${prop.title}")
 	}
 
 	@Test

@@ -8,7 +8,7 @@ import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
 
 @SpringBootApplication
-@EnableConfigurationProperties(BlogProperties::class)
+@EnableConfigurationProperties(BlogProperties::class, AnotherBlogProperties::class)
 class BlogApplication {
 
 	@Bean
